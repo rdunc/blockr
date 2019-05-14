@@ -1,0 +1,42 @@
+<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="80" ng-show="ProjectCtrl.sidebarCurrentTab === 1">
+  <ul class="list-unstyled">
+    <li class="header">
+      <a>
+        Details
+      </a>
+    </li>
+    <li class="item">
+      <form name="ProjectCtrl.projectDetailsForm" novalidate>
+        <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectDetailsForm.itemMaterial.$error.required}">
+          <select class="form-control" name="itemMaterial" ng-model="ProjectCtrl.projectItem.itemMaterial" ng-required="true" ng-change="ProjectCtrl.setItemMaterial(ProjectCtrl.projectItem.itemMaterial)">
+            <option ng-repeat="itemMaterialVar in ProjectCtrl.itemMaterials">
+              {{ itemMaterialVar.name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectDetailsForm.itemType.$error.required}">
+          <select class="form-control" name="itemType" ng-model="ProjectCtrl.projectItem.itemType" ng-required="true" ng-change="ProjectCtrl.getEnchantments(ProjectCtrl.projectItem.itemType)">
+            <option ng-repeat="itemTypeVar in ProjectCtrl.itemTypes">
+              {{ itemTypeVar.name }}
+            </option>
+          </select>
+          <p style="font-weight: bold;">Changing the item type will erase all existing enchantments!</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectDetailsForm.name.$error.maxlength || ProjectCtrl.projectDetailsForm.name.$error.required}">
+          <input class="form-control color-white" name="name" type="text" placeholder="Item Name" ng-maxlength="25" ng-model="ProjectCtrl.projectItem.name" ng-required="true">
+        </div>
+        <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectDetailsForm.lore1.$error.maxlength}">
+          <input class="form-control color-white" name="lore1" type="text" placeholder="Lore Line 1" ng-maxlength="200" ng-model="ProjectCtrl.projectItem.lore1">
+        </div>
+        <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectDetailsForm.lore2.$error.maxlength}">
+          <input class="form-control color-white" name="lore2" type="text" placeholder="Lore Line 2" ng-maxlength="200" ng-model="ProjectCtrl.projectItem.lore2">
+        </div>
+        <div class="form-group">
+          <label>
+            <input name="unbreakable" type="checkbox" ng-model="ProjectCtrl.projectItem.unbreakable" ng-change="ProjectCtrl.setUnbreakableFlag('unbreakable', ProjectCtrl.projectItem.unbreakable)"> Unbreakable
+          </label>
+        </div>
+      </form>
+    </li>
+  </ul>
+</perfect-scrollbar>

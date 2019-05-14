@@ -1,0 +1,35 @@
+header.project {
+  margin-left: 16em;
+
+  nav {
+    box-shadow: none;
+    background-color: #191c1f !important;
+
+    ul.navbar-nav li {
+      a {
+        color: darken(white, 25%) !important;
+        font-size: 14px;
+        cursor: pointer;
+
+        &.save-timeout {
+          color: darken(white, 50%) !important;
+        }
+
+        &:hover,
+        &:active {
+          color: white !important;
+        }
+
+        i {
+          padding-right: .5em;
+          cursor: pointer;
+        }
+      }
+
+      &.open > a {
+        color: white;
+        background-color: lighten(#2a333d, 7%);
+      }
+    }
+  }
+}

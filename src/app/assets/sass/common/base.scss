@@ -1,0 +1,53 @@
+// --------------------------------------------------
+// Base styles
+// --------------------------------------------------
+
+body, html {
+  height: 100%;
+}
+
+* {
+  outline: none !important;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+}
+
+.save-timeout {
+  color: darken(white, 40%) !important;
+  pointer-events: none;
+  cursor: wait;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.isVisible {
+  opacity: 1 !important;
+  left: 20%;
+}
+
+.tooltip.save {left: -5em !important;}
+
+.scroller {
+  //white-space: pre-line;
+  height: 776px;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.cur-pointer {cursor: pointer !important;}
+.cur-default {cursor: default !important;}
+
+.page {
+  margin-top: 5em;
+  margin-bottom: 10em;
+
+  .page-title {
+    color: #fcbe32;
+    margin-bottom: 1.2em !important;
+  }
+}

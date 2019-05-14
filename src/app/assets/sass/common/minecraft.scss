@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('../../../assets/dist/fonts/minecraftia.woff?v=1.0.0') format('woff');
+}
+
+.mc-tooltip {
+  position: absolute;
+  max-width: 750px;
+  font-family: 'Minecraftia', sans-serif;
+  background-color: #100010;
+  background-color: rgba(16,0,16,0.94);
+  color: white;
+  padding: 0.7em;
+  font-size: 16px;
+  word-spacing: 4px;
+  white-space: nowrap;
+  line-height: 1.25em;
+  // text-shadow: 0.125em 0.125em 0 #3F3F3F;
+  margin: 0.125em 0.25em;
+  pointer-events: auto;
+  z-index: 99;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0.125em;
+    right: -0.125em;
+    bottom: 0.125em;
+    left: -0.125em;
+    border: 0.125em solid #100010;
+    border-style: none solid;
+    border-color: rgba(16,0,16,0.94);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0.125em;
+    right: 0;
+    bottom: 0.125em;
+    left: 0;
+    border: 0.125em solid #2D0A63;
+    border-image: linear-gradient(rgba(80,0,255,0.31),rgba(40,0,127,0.31)) 1;
+  }
+
+  .item-name {
+    color: #55ffff;
+    font-style: italic;
+    margin-bottom: .5em;
+  }
+
+  .item-lore1,
+  .item-lore2 {
+    color: #9f01a0;
+    margin-bottom: .5em;
+  }
+
+  .item-enchantment {
+    color: #aaaaaa;
+    margin-bottom: .5em;
+  }
+
+  .item-attribute {
+    color: #5555ff;
+    margin-bottom: .5em;
+  }
+}

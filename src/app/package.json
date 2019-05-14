@@ -1,0 +1,12 @@
+{
+  "name": "Blockr",
+  "version": "0.0.2",
+  "description": "Blockr - Command Block Studio",
+  "main": "main.js",
+  "scripts": {},
+  "author": "Ryand1034",
+  "homepage": "http://blockr.ryanduncan.me",
+  "devDependencies": {
+    "electron-squirrel-startup": "*"
+  }
+}

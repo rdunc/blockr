@@ -1,0 +1,48 @@
+<div ng-include="'views/project/layouts/header.html'"></div>
+<div ng-include="'views/project/layouts/sidebar.html'"></div>
+
+<div class="page project" ng-class="{'sidebar-opened': ProjectCtrl.projectItem}">
+  <div class="project-item">
+    <h3 class="guide text-center" ng-show="!ProjectCtrl.projectItem">
+      Create or open an item.
+    </h3>
+    <div class="mc-tooltip" ng-show="ProjectCtrl.projectItem">
+      <div class="item-name">
+        {{ ProjectCtrl.projectItem.name }}
+      </div>
+      <div class="item-enchantments" ng-show="ProjectCtrl.ench">
+        <ul class="list-unstyled">
+          <li ng-repeat="enchantment in ProjectCtrl.ench | orderBy: 'name'">
+            <div class="inline item-enchantment">
+              {{ ProjectCtrl.getEnchantmentName(enchantment.id) }}
+              {{ ProjectCtrl.getEnchantmentNumerial(enchantment.lvl) }}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item-lore1" ng-show="ProjectCtrl.projectItem.lore1">
+        {{ ProjectCtrl.projectItem.lore1 }}
+      </div>
+      <div class="item-lore2" ng-show="ProjectCtrl.projectItem.lore2">
+        {{ ProjectCtrl.projectItem.lore2 }}
+      </div>
+      <div class="item-attributes" ng-show="ProjectCtrl.AttributeModifiers">
+        <ul class="list-unstyled">
+          <li ng-repeat="attribute in ProjectCtrl.AttributeModifiers">
+            <div class="inline item-attribute">
+              +{{ attribute.Amount }}
+              {{ ProjectCtrl.getAttributeName(attribute.Name) }}
+            </div>
+          </li>
+          <li class="item-attribute" ng-show="ProjectCtrl.projectItem.unbreakable">
+            Unbreakable
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-include="'views/project/layouts/modal_open_project_item.html'"></div>
+<div ng-include="'views/project/layouts/modal_close_project.html'"></div>
+<div ng-include="'views/project/layouts/modal_close_item.html'"></div>

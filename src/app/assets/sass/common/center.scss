@@ -1,0 +1,12 @@
+// .flex-center {
+//   display: flex !important;
+//   align-items: center !important;
+//   justify-content: center !important;
+// }
+
+.center-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

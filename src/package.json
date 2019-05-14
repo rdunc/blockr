@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "gulp && electron ./app/main.js",
+    "dev": "NODE_ENV='development' npm run start",
+    "dist": "cd app && gulp && cd .. && npm run dist:win64",
+    "dist:osx": "build --platform darwin",
+    "dist:win32": "build --platform win32 --arch ia32",
+    "dist:win64": "build --platform win32 --arch x64"
+  },
+  "devDependencies": {
+    "electron-builder": "next",
+	  "electron": "^1.4.0",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-ng-annotate": "*",
+    "del": "*"
+  },
+  "build": {
+    "appId": "com.ryand.blockr",
+    "app-category-type": "public.app.category.coding",
+  	"remoteReleases": "http://blockr.ryanduncan.me/update/win64/",
+    "win": {
+      "iconUrl": "http://blockr.ryanduncan.me/icon.ico"
+    }
+  }
+}

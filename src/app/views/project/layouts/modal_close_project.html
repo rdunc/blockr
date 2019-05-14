@@ -1,0 +1,23 @@
+<div class="modal-flex info-close-project" ng-controller="UIController as UICtrl">
+  <div class="modal-close" ng-click="UICtrl.closeModal()">
+    <i class="fa fa-close"></i>
+  </div>
+  <div class="modal-flex-title">
+    <h3>
+      Close Project
+    </h3>
+  </div>
+  <div class="modal-flex-content">
+    <p>
+      Are you sure you want to close this project? Any unsaved changes will be discarded.
+    </p>
+  </div>
+  <div class="modal-flex-footer">
+    <button class="btn btn-primary inline" ng-click="UICtrl.closeModal()">
+      No
+    </button>
+    <button class="btn btn-success inline" ng-click="ProjectCtrl.closeProject()">
+      Yes
+    </button>
+  </div>
+</div>

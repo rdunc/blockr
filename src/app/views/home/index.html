@@ -1,0 +1,39 @@
+<div ng-include="'views/updateAlert.html'"></div>
+<div ng-include="'views/modals/error_modal.html'"></div>
+<div ng-include="'views/home/partials/header.html'"></div>
+
+<main class="page home">
+  <div class="section-project">
+    <div class="container">
+      <h3>
+        Project Management
+      </h3>
+      <div class="row">
+        <div class="col-md-2 col-sm-12">
+          <div class="card open-project cur-pointer" ng-click="HomeCtrl.showOpenProjectModal()">
+            <div class="card-body text-center cur-pointer">
+              <i class="fa fa-plus-square cur-pointer"></i>
+              <h1 class="cur-pointer">
+                Open Project
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <div class="card new-project cur-pointer" ng-click="HomeCtrl.showNewProjectModal()">
+            <div class="card-body text-center cur-pointer">
+              <i class="fa fa-pencil-square cur-pointer"></i>
+              <h1 class="cur-pointer">
+                Create Project
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div ng-include="'views/home/partials/modal_open_project.html'"></div>
+<div ng-include="'views/home/partials/modal_new_project.html'"></div>
+<div ng-include="'views/home/partials/modal_guide.html'"></div>

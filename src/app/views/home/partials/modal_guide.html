@@ -1,0 +1,36 @@
+<div class="modal-flex info-guide" ng-controller="UIController as UICtrl">
+  <div class="modal-close" ng-click="UICtrl.closeModal()">
+    <i class="fa fa-close"></i>
+  </div>
+  <div class="modal-flex-title">
+    <h3>
+      Welcome to Blockr!
+    </h3>
+  </div>
+  <div class="modal-flex-content">
+    <span class="label label-primary" style="font-size: 1em;">
+      Beta Notice
+    </span>
+    <p style="margin-top: 1em; margin-bottom: 2em;">
+      While using Blockr keep in mind that it is in Beta. Which means that things may not work the way they were intended, and things are always changing.
+      Future releases of Blockr <b>may not</b> support projects that you create now, so take that into account while making them.
+    </p>
+    <span class="label label-success" style="background-color: #3c77bc; font-size: 1em;">
+      Follow the Development
+    </span>
+    <p style="margin-top: 1em; margin-bottom: 2em;">
+      Want to see what's coming next, or just curious and want to follow the development. Click on the trello icon (the third icon) in the top right.
+    </p>
+    <span class="label label-success" style="font-size: 1em;">
+      Feedback
+    </span>
+    <p style="margin-top: 1em; margin-bottom: 2em;">
+      Found a bug? Something not working the way you thought? Have an amazing idea? Click on the chat bubble icon in the top right.
+    </p>
+  </div>
+  <div class="modal-flex-footer">
+    <button type="submit" class="btn btn-primary inline" ng-click="UICtrl.closeGuide()">
+      Alright, got it!
+    </button>
+  </div>
+</div>

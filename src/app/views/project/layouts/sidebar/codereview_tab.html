@@ -1,0 +1,53 @@
+<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="80" ng-show="ProjectCtrl.sidebarCurrentTab === 4">
+  <ul class="list-unstyled">
+    <li class="header">
+      <a>
+        Hide Flags
+      </a>
+    </li>
+    <li class="item item-no-bottom">
+      <div class="form-group">
+        <label>
+          <input type="checkbox" ng-model="ProjectCtrl.flagEnchantments" ng-change="ProjectCtrl.setHideFlag('enchantments', ProjectCtrl.flagEnchantments)"> Enchantments
+        </label>
+      </div>
+    </li>
+    <li class="item item-no-bottom">
+      <div class="form-group">
+        <label>
+          <input type="checkbox" ng-model="ProjectCtrl.flagAttributes" ng-change="ProjectCtrl.setHideFlag('attributes', ProjectCtrl.flagAttributes)"> Attributes
+        </label>
+      </div>
+    </li>
+    <li class="item item-no-bottom">
+      <div class="form-group">
+        <label>
+          <input type="checkbox" ng-model="ProjectCtrl.flagUnbreakable" ng-change="ProjectCtrl.setHideFlag('unbreakable', ProjectCtrl.flagUnbreakable)"> Unbreakable
+        </label>
+      </div>
+    </li>
+    <li class="header">
+      <a>
+        Code Review
+      </a>
+    </li>
+    <li class="item">
+      <a class="btn btn-success" ngclipboard ngclipboard-success="ProjectCtrl.clipboardEvent(e);" data-clipboard-target="#codeReview">
+        Copy to Clipboard
+      </a>
+      <div class="tooltip bottom isVisible" role="tooltip" ng-show="ProjectCtrl.clipboardSuccess">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">
+          Successfully Copied
+        </div>
+      </div>
+    </li>
+    <li class="item">
+      <form name="projectCodeForm" novalidate>
+        <div class="form-group">
+          <textarea id="codeReview" class="form-control color-white" name="codeReviewName" cols="20" rows="20" readonly>/give @p {{ ProjectCtrl.getReviewItem(ProjectCtrl.projectItem.itemMaterial, ProjectCtrl.projectItem.itemType) }} 1 0 {display:{{ ProjectCtrl.getReviewDisplay(ProjectCtrl.projectItem.name, ProjectCtrl.projectItem.lore1, ProjectCtrl.projectItem.lore2) }}, AttributeModifiers:{{ ProjectCtrl.getReviewAttributes(ProjectCtrl.AttributeModifiers) }},ench:{{ ProjectCtrl.getReviewEnchantments(ProjectCtrl.ench) }},HideFlags:{{ ProjectCtrl.hideFlags }},Unbreakable:{{ ProjectCtrl.unbreakableFlag }}}</textarea>
+        </div>
+      </form>
+    </li>
+  </ul>
+</perfect-scrollbar>

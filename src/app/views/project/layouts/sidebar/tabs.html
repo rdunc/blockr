@@ -1,0 +1,26 @@
+<aside class="sidebar-tabs" ng-show="ProjectCtrl.projectItem">
+  <nav role="navigation">
+    <ul class="list-unstyled">
+      <li ng-click="ProjectCtrl.sidebarChangeTab(1)" ng-class="{'active': ProjectCtrl.sidebarCurrentTab === 1}">
+        <a>
+          <i class="fa fa-pencil"></i>
+        </a>
+      </li>
+      <li ng-click="ProjectCtrl.sidebarChangeTab(2)" ng-class="{'active': ProjectCtrl.sidebarCurrentTab === 2}">
+        <a>
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+      <li ng-click="ProjectCtrl.sidebarChangeTab(3)" ng-class="{'active': ProjectCtrl.sidebarCurrentTab === 3}">
+        <a>
+          <i class="fa fa-star"></i>
+        </a>
+      </li>
+      <li ng-click="ProjectCtrl.sidebarChangeTab(4)" ng-class="{'active': ProjectCtrl.sidebarCurrentTab === 4}">
+        <a>
+          <i class="fa fa-code"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

@@ -1,0 +1,32 @@
+<div class="modal-flex info-open-project" ng-controller="UIController as UICtrl">
+  <div class="modal-close" ng-click="UICtrl.closeModal()">
+    <i class="fa fa-close"></i>
+  </div>
+  <div class="modal-flex-title">
+    <h3>
+      Open Project
+    </h3>
+  </div>
+  <div class="modal-flex-content">
+    <p ng-show="!HomeCtrl.projects || HomeCtrl.projects.length === 0">
+      You have no projects.
+    </p>
+    <table class="table table-striped" ng-show="HomeCtrl.projects.length > 0">
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr dir-paginate="project in HomeCtrl.projects|orderBy:HomeCtrl.sortKey:HomeCtrl.reverse|itemsPerPage:6" ng-click="HomeCtrl.loadProject(project.name)">
+          <th class="cur-pointer" scope="row">{{ project.name }}</th>
+          <td class="cur-pointer">{{ project.description }}</td>
+          <td class="cur-pointer">{{ project.created_at | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <dir-pagination-controls max-size="6" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+  </div>
+</div>

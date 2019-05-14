@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blockr</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/dist/css/app.css" />
+  </head>
+  <body ng-app="blockrApp">
+    <ng-view></ng-view>
+  </body>
+  <script>
+    window.$ = window.jQuery = require('./assets/js/vendor/jquery.js');
+  </script>
+  <script>
+    require('./renderer.js');
+  </script>
+  <script src="assets/dist/js/app.js"></script>
+</html>

@@ -1,0 +1,8 @@
+// Theme BG Colors
+$bg-color: #262f37;
+$bg-color-light: lighten(#262f37, 5%);
+
+// Theme Colors
+$base-color: #6c747b;
+$base-color-light: lighten($base-color, 10%);
+$base-border-color: lighten($bg-color, 25%);

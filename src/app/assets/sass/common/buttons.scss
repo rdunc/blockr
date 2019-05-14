@@ -1,0 +1,16 @@
+// --------------------------------------------------
+// Button styles
+// --------------------------------------------------
+
+.btn {
+  color: white !important;
+  border: none !important;
+  border-radius: 3px !important;
+  background-image: none !important;
+
+  &.with-icon {
+    i {
+      margin-right: 3px;
+    }
+  }
+}

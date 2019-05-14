@@ -1,0 +1,23 @@
+.page.project {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 2em;
+  // margin-left: 16em;
+
+  &.sidebar-opened {
+    top: 40% !important;
+    left: 50%;
+  }
+
+  .project-item {
+    h2 {
+      color: white;
+    }
+
+    h3.guide {
+      color: darken(white, 35%);
+    }
+  }
+}

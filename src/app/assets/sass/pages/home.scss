@@ -1,0 +1,47 @@
+@import "app/assets/sass/common/mixins/colors";
+
+header.home {
+  padding-top: 4em;
+  padding-bottom: 5em;
+
+  ul li {
+    color: #6c747b;
+    font-weight: 600;
+    font-size: 1.1em;
+
+    i {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.page.home {
+  margin-top: 0;
+
+  .section-project {
+    margin-bottom: 3em;
+
+    h3 {
+      color: white;
+      padding-bottom: .7em;
+    }
+  }
+
+  .card.open-project {
+    background-color: #3c77bc;
+    border: 1px solid lighten(#3c77bc, 5%);
+
+    &:active, &:hover {
+      background-color: lighten(#3c77bc, 5%);
+    }
+  }
+
+  .card.new-project {
+    background-color: #d23c43;
+    border: 1px solid lighten(#d23c43, 5%);
+
+    &:active, &:hover {
+      background-color: lighten(#d23c43, 5%);
+    }
+  }
+}

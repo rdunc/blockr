@@ -1,0 +1,125 @@
+// --------------------------------------------------
+// Bootstrap Override styles
+// --------------------------------------------------
+
+@import "app/assets/sass/common/mixins/colors";
+
+body {
+  font-family: 'Proxima Nova', sans-serif !important;
+  background-color: $bg-color !important;
+  color: $base-color !important;
+  overflow: hidden;
+}
+
+a {
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none !important;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.navbar-nav {
+  float: left !important;
+  margin: 0 !important;
+}
+.navbar-nav > li {
+  float: left !important;
+}
+
+.navbar-nav > li > a {
+  padding-top: 20.5px !important;
+  padding-bottom: 20.5px !important;
+}
+
+.navbar-right {
+  float: right !important;
+  margin-right: 0 !important;
+}
+
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0 !important;
+}
+
+.form-control {
+  color: black !important;
+  cursor: text;
+  margin-bottom: 1.5em;
+
+  &.color-white {
+    color: white !important;
+  }
+}
+
+select.form-control {
+  background-color: #1e262d;
+  color: white !important;
+  cursor: default !important;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.modal-backdrop {
+  opacity: .4;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.modal-content {
+  background-color: white !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+
+  h1, h2, h3, h4, h5 {
+    color: #F06435;
+  }
+}
+
+.modal-body {
+  color: black;
+}
+
+.close {
+  color: black !important;
+  font-size: 22px !important;
+  text-shadow: none !important;
+  opacity: .4 !important;
+  cursor: hand  !important;
+
+  &:focus, &:active, &:hover {
+    opacity: .9 !important;
+  }
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.modal-backdrop.in {
+  opacity: 0.3 !important;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: white !important;
+  background-color: lighten(#282c37, 7%) !important;
+}
+.dropdown-menu {
+  background-color: lighten(#282c37, 7%) !important;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: lighten(#282c37, 10%) !important;
+}

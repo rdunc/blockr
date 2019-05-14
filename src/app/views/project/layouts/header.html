@@ -1,0 +1,58 @@
+<header class="project">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+      <!-- <div class="navbar-header">
+        <button aria-expanded="false" class="navbar-toggle collapsed" data-target=".navbar-collapse-1" data-toggle="collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="navbar-brand">
+          <a href="/">Blockr</a>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1"> -->
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            New
+          </a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="item in ProjectCtrl.supportedItemTypes | orderBy: 'name'">
+              <a ng-click="ProjectCtrl.newItem(item.option)">
+                {{ item.name }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a ng-click="ProjectCtrl.showOpenProjectItemModal()">
+            Open
+          </a>
+        </li>
+        <li ng-show="ProjectCtrl.projectItem">
+          <a ng-click="ProjectCtrl.saveItem()" ng-class="{'save-timeout': ProjectCtrl.projectDetailsForm.$invalid ||
+                                                                          ProjectCtrl.projectAttributeForm.$invalid ||
+                                                                          ProjectCtrl.projectEnchantmentForm.$invalid ||
+                                                                          ProjectCtrl.itemSaved}">
+            Save Item
+            <span class="label label-success" ng-show="ProjectCtrl.itemSaved">
+              {{ ProjectCtrl.itemSavedNotice }}
+            </span>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="ProjectCtrl.projectItem">
+          <a ng-click="ProjectCtrl.showCloseItemModal()">
+            Close Item
+          </a>
+        </li>
+        <li>
+          <a ng-click="ProjectCtrl.showCloseProjectModal()">
+            Close Project
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

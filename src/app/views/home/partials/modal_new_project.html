@@ -1,0 +1,29 @@
+<div class="modal-flex info-new-project" ng-controller="UIController as UICtrl">
+  <div class="modal-close" ng-click="UICtrl.closeModal()">
+    <i class="fa fa-close"></i>
+  </div>
+  <div class="modal-flex-title">
+    <h3>
+      Create new project
+    </h3>
+  </div>
+  <div class="modal-flex-content">
+    <form name="newProjectForm" accept-charset="UTF-8" ng-submit="HomeCtrl.createProject(newProjectForm.$valid)" novalidate>
+      <div class="form-group" ng-class="{'has-error': newProjectForm.name.$error.maxlength || newProjectForm.name.$error.required}">
+        <label>Project Name (required)</label>
+        <p>Maximum of 25 characters (only letters and numbers)</p>
+        <input class="form-control" name="name" type="text" ng-maxlength="25" ng-model="HomeCtrl.newProject.name" ng-required="true">
+      </div>
+      <div class="form-group" ng-class="{'has-error': newProjectForm.description.$error.maxlength}">
+        <label>Description</label>
+        <p>Maximum of 250 characters</p>
+        <textarea class="form-control" name="description" cols="50" rows="10" ng-maxlength="250" ng-model="HomeCtrl.newProject.description"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" ng-disabled="newProjectForm.$invalid">
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

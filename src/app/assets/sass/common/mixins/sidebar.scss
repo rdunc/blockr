@@ -1,0 +1,8 @@
+@mixin sidebar-panel($top, $left, $width, $bgColor) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: 0;
+  width: $width;
+  background-color: $bgColor;
+}

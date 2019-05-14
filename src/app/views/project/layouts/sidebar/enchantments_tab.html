@@ -1,0 +1,66 @@
+<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="80" ng-show="ProjectCtrl.sidebarCurrentTab === 3">
+  <ul class="list-unstyled">
+    <li class="header">
+      <a>
+        Enchantments
+      </a>
+    </li>
+    <li class="item" ng-show="ProjectCtrl.itemEnchantments.length === 0">
+      <a>Choose an item type to see the list of available enchants.</a>
+    </li>
+    <li class="item inline" ng-show="ProjectCtrl.itemEnchantments.length > 0">
+      <a>
+        <div class="btn-group">
+          <a class="btn btn-success">
+            Add
+          </a>
+          <a class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="enchantment in ProjectCtrl.itemEnchantments | orderBy: 'name'">
+              <a ng-click="ProjectCtrl.addEnchantment(enchantment.option)">
+                {{ enchantment.name }}
+              </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a ng-click="ProjectCtrl.addEnchantment()">
+                Custom
+              </a>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="item m-b-0">
+      <a>
+        <form name="ProjectCtrl.projectEnchantmentForm" accept-charset="UTF-8" novalidate>
+          <div ng-repeat="enchantment in ProjectCtrl.ench">
+            {{ ProjectCtrl.getEnchantmentName(enchantment.id) }}
+            <div class="row">
+              <div class="col-md-8">
+                  <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectEnchantmentForm.id.$error.required}">
+                    <label>Id</label>
+                    <input class="form-control color-white" type="number" name="id" placeholder="id" ng-model="enchantment.id" ng-required="true">
+                  </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="form-group" ng-class="{'has-error': ProjectCtrl.projectEnchantmentForm.level.$error.min ||
+                                                                  ProjectCtrl.projectEnchantmentForm.level.$error.max ||
+                                                                  ProjectCtrl.projectEnchantmentForm.level.$error.maxlength ||
+                                                                  ProjectCtrl.projectEnchantmentForm.level.$error.required}">
+                    <label>Level</label>
+                    <input class="form-control color-white" type="number" name="level" placeholder="level" ng-min="1" ng-max="ProjectCtrl.getMaxEnchantmentLevel(enchantment.id)" ng-maxlength="1" ng-model="enchantment.lvl" ng-required="true">
+                  </div>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-success inline" ng-click="ProjectCtrl.removeEnchantment(enchantment.id)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </a>
+    </li>
+  </ul>
+</perfect-scrollbar>

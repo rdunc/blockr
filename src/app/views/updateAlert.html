@@ -1,0 +1,7 @@
+<div class="update-alert" ng-controller="UpdateController as UpdateCtrl" ng-show="UpdateCtrl.showUpdateAlert">
+  <div class="alert alert-dismissible alert-success" style="border-radius: 0;">
+    <button type="button" class="close" data-dismiss="alert" style="color: white !important; opacity: 1 !important;">×</button>
+    An update for Blockr has been installed. Restart to receive update.
+    <button type="button" class="btn btn-primary btn-sm" style="margin-left: 2em;" ng-click="UpdateCtrl.installUpdate()">Restart</button>
+  </div>
+</div>
